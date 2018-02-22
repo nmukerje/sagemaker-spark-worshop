@@ -34,8 +34,8 @@ class InferenceServer extends ScalatraServlet with JacksonJsonSupport {
     case e => "Unexpected Exception : "+(e.toString)
   }
 
-  //val model_path = "jar:file:/opt/ml/model"
-  val model_path = "jar:file:/mnt"
+  val model_path = "jar:file:/opt/ml/model"
+  //val model_path = "jar:file:/mnt"
 
 
   def init_model() : Transformer = {
