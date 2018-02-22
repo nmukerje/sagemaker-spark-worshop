@@ -1,6 +1,6 @@
 # Sagemaker-Spark-Workshop
 
-## Productionizing a Spark Model to serve a near real-time Inference API hosted on Amazon Sagemaker.
+## Deploying a Spark Model to serve a near real-time Inference API hosted on Amazon Sagemaker.
 
 This workshop shows how to train a Spark Model using Amazon Sagemaker pointed to Apache Livy running on an Amazon EMR Spark cluster. The Spark model is then serialized to an Mleap bundle and hosted on Amazon Sagemaker to serve an Inference API. The Inference API accepts JSON data as input and returns predictions on the input dataset within milliseconds.
 
@@ -24,6 +24,7 @@ $> cd inference-server
 $> sbt
 sbt> assembly
 sbt> exit
+$> cd ..
 $ > ./build_and_push inference-server
 ```
 You can now view the inference-server image in the repository tab on the ECR (Elastic Container Registry) console.
@@ -35,5 +36,3 @@ The notebook 'SageMaker-Model-Deployment.ipynb' covers the steps to deploy the S
 The SageMaker Endpoint supports 2 http endpoints:
 * /ping - used for healthchecks by SageMaker
 * /invocations - returns predictions when a JSON payload is POSTed.
-
-
