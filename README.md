@@ -21,9 +21,7 @@ To build the Inference Server docker application:
 
 ```
 $> cd inference-server
-$> sbt
-sbt> assembly
-sbt> exit
+$> sbt assembly
 $> cd ..
 $ > ./build_and_push inference-server
 ```
