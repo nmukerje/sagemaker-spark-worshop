@@ -14,7 +14,7 @@ The Notebook 'Predict-Car-Prices.ipynb' trains the Spark model on the dataset an
 
 The Notebook 'Scala-Mleap-Serialize-Model.ipynb' covers the steps to convert the Spark model to an Mleap bundle.
 
-### Step 3: Building the Inteference Server Docker application and pushing the image to ECR..
+### Step 3: Building the Inteference Server Docker application and pushing the image to ECR.
 
 To build the Inference Server docker application:
 (please install scala, sbt and docker on your local machine)
