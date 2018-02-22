@@ -4,11 +4,11 @@
 
 This workshop shows how to train a Spark Model using Amazon Sagemaker pointed to Apache Livy running on an Amazon EMR Spark cluster. The Spark model is then serialized to an Mleap bundle and hosted on Amazon Sagemaker to serve an Inference API. The Inference API should be able to accept JSON data as input and return a prediction on the dataset within milliseconds.
 
-This uses a small car prices dataset to predict the price of a car given certain attributes using the GBT Regressor algorithm. But this approach can be however used to host any Spark Pipeline Model on Amazon Sagemaker. As the training is done on Amazon EMR, you can use this approach to train models on very large datasets.
+This uses a small car prices dataset to predict the price of a car given certain attributes using the Gradient Boosting Trees Regression algorithm. But this approach can be used to host any Spark Pipeline Model on Amazon Sagemaker. As the training is done on Amazon EMR, this approach can be used to train models on very large datasets.
 
 ### Step 1: Building the Spark Pipeline model. 
 
-The Notebook 'Predict-Car-Prices.ipynb' builds the Spark model from the dataset and saves it to an S3 location.
+The Notebook 'Predict-Car-Prices.ipynb' trains the Spark model on the dataset and saves the model to an S3 location.
 
 ### Step 2: Converting the Spark model to the MLeap format.
 
@@ -20,12 +20,13 @@ To build the Inference Server docker application:
 (please install scala, sbt and docker on your local machine)
 
 ```
+$> cd inference-server
 $> sbt
 sbt> assembly
 sbt> exit
 $ > ./build_and_push inference-server
 ```
-You can navigate the the ECR (Elastic Container Registry) console to view the container image in the repository.
+You can now view the inference-server image in the repository tab on the ECR (Elastic Container Registry) console.
 
 ### Step 4: Creating the Sagemaker Model and Endpoint, and testing the Endpoint.
 
