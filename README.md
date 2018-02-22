@@ -22,8 +22,7 @@ To build the Inference Server docker application:
 ```
 $> cd inference-server
 $> sbt assembly
-$> cd ..
-$ > ./build_and_push inference-server
+$> ../build_and_push inference-server
 ```
 You can now view the inference-server image in the repository tab on the ECR (Elastic Container Registry) console.
 
