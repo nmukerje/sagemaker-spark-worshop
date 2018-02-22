@@ -2,7 +2,7 @@
 
 ## Deploying a Spark Model to serve a near real-time Inference API hosted on Amazon Sagemaker.
 
-This workshop shows how to train a Spark Model using Amazon Sagemaker pointed to Apache Livy running on an Amazon EMR Spark cluster. The Spark model is then serialized to an Mleap bundle and hosted on Amazon Sagemaker to serve an Inference API. The Inference API accepts JSON data as input and returns predictions on the input dataset within milliseconds.
+This workshop shows how to train a Spark Model using Amazon Sagemaker pointed to Apache Livy running on an Amazon EMR Spark cluster. The Spark model is then serialized to an MLeap bundle and hosted on Amazon Sagemaker to serve an Inference API. The Inference API accepts JSON data as input and returns predictions on the input dataset within milliseconds.
 
 This uses a small car prices dataset to predict the price of a car given certain attributes using the Gradient Boosted Trees Regression algorithm. But this approach can be used to host any Spark Pipeline Model on Amazon Sagemaker. As the training is done on Spark on Amazon EMR, this approach can be used to train models on very large datasets.
 
@@ -10,9 +10,9 @@ This uses a small car prices dataset to predict the price of a car given certain
 
 The Notebook ['Predict-Car-Prices.ipynb'](https://github.com/nmukerje/sagemaker-spark-worshop/blob/master/Predict-Car-Prices.ipynb) trains the Spark model on the dataset and saves the model to an S3 location.
 
-## Step 2: Converting the Spark model to the Mleap format.
+## Step 2: Converting the Spark model to the MLeap format.
 
-The Notebook '[Scala-Mleap-Serialize-Model.ipynb'](https://github.com/nmukerje/sagemaker-spark-worshop/blob/master/Scala-Mleap-Serialize-Model.ipynb) covers the steps to convert the Spark model to an Mleap bundle. This step can be merged with Step 1 in the future once Mleap has better support for PySpark.
+The Notebook '[Scala-MLeap-Serialize-Model.ipynb'](https://github.com/nmukerje/sagemaker-spark-worshop/blob/master/Scala-Mleap-Serialize-Model.ipynb) covers the steps to convert the Spark model to an MLeap bundle. This step can be merged with Step 1 in the future once MLeap has better support for PySpark.
 
 ## Step 3: Building the Inteference Server Docker application and pushing the image to ECR.
 
