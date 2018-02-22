@@ -1,12 +1,13 @@
-# inference-server #
+# sagemaker-spark-worshop
+Productionizing a Spark Model to serve a Real-Time Inference API hosted on Amazon Sagemaker.
 
-## Build & Run ##
+Step 1: Building the Spark Pipeline model. 
 
-```sh
-$ cd inference_server
-$ sbt
-> jetty:start
-> browse
-```
+Step 2: Converting the Spark model to the MLeap format.
 
-If `browse` doesn't launch your browser, manually open [http://localhost:8080/](http://localhost:8080/) in your browser.
+Step 3: Building the Inteference Server Application.
+
+Step 4: Dockerizing the Application and deployng the container to ECR.
+
+Step 5: Creating the Sagemaker Model and Endpoint, and testing the Endpoint.
+
