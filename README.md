@@ -8,7 +8,7 @@ This uses a small car prices dataset to predict the price of a car given certain
 
 ## Step 1: Training the Spark Pipeline model. 
 
-The Notebook 'Predict-Car-Prices.ipynb' trains the Spark model on the dataset and saves the model to an S3 location.
+The Notebook ['Predict-Car-Prices.ipynb'](https://github.com/nmukerje/sagemaker-spark-worshop/blob/master/Predict-Car-Prices.ipynb) trains the Spark model on the dataset and saves the model to an S3 location.
 
 ## Step 2: Converting the Spark model to the Mleap format.
 
