@@ -6,6 +6,10 @@ This workshop shows how to train a Spark Model using Amazon Sagemaker pointed to
 
 This uses a small car prices dataset to predict the price of a car given certain attributes using the Gradient Boosted Trees Regression algorithm. But this approach can be used to host any Spark Pipeline Model on Amazon Sagemaker. As the training is done on Spark on Amazon EMR, this approach can be used to train models on very large datasets.
 
+## Pre-Requisites
+
+[WIP]
+
 ## Step 1: Training the Spark Pipeline model. 
 
 The Notebook ['Predict-Car-Prices.ipynb'](https://github.com/nmukerje/sagemaker-spark-worshop/blob/master/Predict-Car-Prices.ipynb) trains the Spark model on the dataset and saves the model to an S3 location.
