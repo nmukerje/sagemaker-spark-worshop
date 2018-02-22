@@ -2,7 +2,7 @@
 
 ## Productionizing a Spark Model to serve a near real-time Inference API hosted on Amazon Sagemaker.
 
-This workshop shows how to train a Spark Model using Amazon Sagemaker pointed to Apache Livy running on an Amazon EMR Spark cluster. The Spark model is then serialized to an Mleap bundle and hosted on Amazon Sagemaker to serve an Inference API.
+This workshop shows how to train a Spark Model using Amazon Sagemaker pointed to Apache Livy running on an Amazon EMR Spark cluster. The Spark model is then serialized to an Mleap bundle and hosted on Amazon Sagemaker to serve an Inference API. The Inference API should be able to accept JSON data as input and return a prediction on the dataset within milliseconds.
 
 This uses a small car prices dataset to predict the price of a car given certain attributes using the GBT Regressor algorithm. But this approach can be however used to host any Spark Pipeline Model on Amazon Sagemaker. As the training is done on Amazon EMR, you can use this approach to train models on very large datasets.
 
