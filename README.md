@@ -12,7 +12,7 @@ The Notebook ['Predict-Car-Prices.ipynb'](https://github.com/nmukerje/sagemaker-
 
 ## Step 2: Converting the Spark model to the Mleap format.
 
-The Notebook 'Scala-Mleap-Serialize-Model.ipynb' covers the steps to convert the Spark model to an Mleap bundle. This step can be merged with Step 1 in the future once Mleap has better support for PySpark.
+The Notebook '[Scala-Mleap-Serialize-Model.ipynb'](https://github.com/nmukerje/sagemaker-spark-worshop/blob/master/Scala-Mleap-Serialize-Model.ipynb) covers the steps to convert the Spark model to an Mleap bundle. This step can be merged with Step 1 in the future once Mleap has better support for PySpark.
 
 ## Step 3: Building the Inteference Server Docker application and pushing the image to ECR.
 
@@ -28,7 +28,7 @@ You can now view the inference-server image in the repository tab on the ECR (El
 
 ## Step 4: Creating the Sagemaker Model and Endpoint, and testing the Endpoint.
 
-The notebook 'SageMaker-Model-Deployment.ipynb' covers the steps to deploy the SageMaker model and create and test the SageMaker endpoint.
+The notebook ['SageMaker-Model-Deployment.ipynb'](https://github.com/nmukerje/sagemaker-spark-worshop/blob/master/SageMaker-Model-Deployment.ipynb) covers the steps to deploy the SageMaker model and create and test the SageMaker endpoint.
 
 The SageMaker Endpoint supports 2 http endpoints:
 * /ping - used for healthchecks by SageMaker
