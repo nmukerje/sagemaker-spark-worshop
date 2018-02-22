@@ -33,7 +33,7 @@ You can now view the inference-server image in the repository tab on the ECR (El
 The notebook 'SageMaker-Model-Deployment.ipynb' covers the steps to deploy the SageMaker model and create and test the SageMaker endpoint.
 
 The SageMaker Endpoint supports 2 http endpoints:
-/ping - used for healthchecks by SageMaker
-/invocations - returns predictions when a JSON payload is POSTed.
+* /ping - used for healthchecks by SageMaker
+* /invocations - returns predictions when a JSON payload is POSTed.
 
 
