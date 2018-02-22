@@ -4,7 +4,7 @@
 
 This workshop shows how to train a Spark Model using Amazon Sagemaker pointed to Apache Livy running on an Amazon EMR Spark cluster. The Spark model is then serialized to an Mleap bundle and hosted on Amazon Sagemaker to serve an Inference API. The Inference API accepts JSON data as input and returns predictions on the input dataset within milliseconds.
 
-This uses a small car prices dataset to predict the price of a car given certain attributes using the Gradient Boosted Trees Regression algorithm. But this approach can be used to host any Spark Pipeline Model on Amazon Sagemaker. As the training is done on Amazon EMR, this approach can be used to train models on very large datasets.
+This uses a small car prices dataset to predict the price of a car given certain attributes using the Gradient Boosted Trees Regression algorithm. But this approach can be used to host any Spark Pipeline Model on Amazon Sagemaker. As the training is done on Spark on Amazon EMR, this approach can be used to train models on very large datasets.
 
 ## Step 1: Building the Spark Pipeline model. 
 
