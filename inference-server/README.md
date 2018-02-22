@@ -1,6 +1,6 @@
 # inference-server #
 
-## Build & Run ##
+## For Local Build & Run ##
 
 ```sh
 $ cd inference_server
