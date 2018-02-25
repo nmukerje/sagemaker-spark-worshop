@@ -26,7 +26,7 @@ The Notebook ['Predict-Car-Prices.ipynb'](https://github.com/nmukerje/sagemaker-
 
 ## Step 2: Building the Inteference Server Docker application and pushing the image to ECR.
 
-To build the Inference Server docker application:
+The Inference Server Docker application uses a light-weight web micro-framework called ['Scalatra'](http://scalatra.org/) to serve the http application. To build and deploy the Inference Server docker application:
 (please install scala, sbt and docker on your local machine)
 
 ```
