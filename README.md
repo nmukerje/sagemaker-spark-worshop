@@ -22,13 +22,9 @@ aws emr create-cluster --auto-scaling-role EMR_AutoScaling_DefaultRole \
 
 ## Step 1: Training the Spark Pipeline model. 
 
-The Notebook ['Predict-Car-Prices.ipynb'](https://github.com/nmukerje/sagemaker-spark-worshop/blob/master/Predict-Car-Prices.ipynb) trains the Spark model on the dataset and saves the model to an S3 location.
+The Notebook ['Predict-Car-Prices.ipynb'](https://github.com/nmukerje/sagemaker-spark-worshop/blob/master/Predict-Car-Prices.ipynb) trains the Spark model on the dataset and saves the model to an S3 location, converts the Spark pipeline model to an MLeap bundle and saves the MLeap Bundle to S3.
 
-## Step 2: Converting the Spark model to the MLeap format.
-
-The Notebook '[Scala-MLeap-Serialize-Model.ipynb'](https://github.com/nmukerje/sagemaker-spark-worshop/blob/master/Scala-Mleap-Serialize-Model.ipynb) covers the steps to convert the Spark model to an MLeap bundle. This step can be merged with Step 1 in the future once MLeap has better support for PySpark.
-
-## Step 3: Building the Inteference Server Docker application and pushing the image to ECR.
+## Step 2: Building the Inteference Server Docker application and pushing the image to ECR.
 
 To build the Inference Server docker application:
 (please install scala, sbt and docker on your local machine)
@@ -40,7 +36,7 @@ $> ../build_and_push inference-server
 ```
 You can now view the inference-server image in the repository tab on the ECR (Elastic Container Registry) console.
 
-## Step 4: Creating the Sagemaker Model and Endpoint, and testing the Endpoint.
+## Step 3: Creating the Sagemaker Model and Endpoint, and testing the Endpoint.
 
 The notebook ['SageMaker-Model-Deployment.ipynb'](https://github.com/nmukerje/sagemaker-spark-worshop/blob/master/SageMaker-Model-Deployment.ipynb) covers the steps to deploy the SageMaker model and create and test the SageMaker endpoint.
 
