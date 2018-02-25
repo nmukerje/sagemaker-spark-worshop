@@ -17,7 +17,7 @@ aws emr create-cluster --auto-scaling-role EMR_AutoScaling_DefaultRole \
 --instance-groups '[{"InstanceCount":1,"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":1}]},"InstanceGroupType":"MASTER","InstanceType":"m4.large","Name":"Master - 1"},{"InstanceCount":2,"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":1}]},"InstanceGroupType":"CORE","InstanceType":"m4.large","Name":"Core - 2"}]' \
 --region us-west-2
 ```
-* Launch a SageMaker Notebook instance in the same region and subnet.
+* Launch a SageMaker Notebook instance in the same region and VPC.
 * Open the SageMaker Notebook instance once the status is 'InService'.
 
 ## Step 1: Training the Spark Pipeline model. 
