@@ -14,7 +14,7 @@ aws emr create-cluster --auto-scaling-role EMR_AutoScaling_DefaultRole \
 --applications Name=Hadoop Name=Livy Name=Hive Name=Spark --ebs-root-volume-size 10 \
 --ec2-attributes '{"KeyName":"<EC2 keypair>","InstanceProfile":"EMR_EC2_DefaultRole","SubnetId":"<subnet id>","EmrManagedSlaveSecurityGroup":"<security group>","EmrManagedMasterSecurityGroup":"<security group>"}' \
 --service-role EMR_DefaultRole --release-label emr-5.12.0 --name 'Spark Livy Cluster' \
---instance-groups '[{"InstanceCount":1,"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":1}]},"InstanceGroupType":"MASTER","InstanceType":"m4.large","Name":"Master - 1"},{"InstanceCount":2,"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":1}]},"InstanceGroupType":"CORE","InstanceType":"m4.large","Name":"Core - 2"}]' \
+--instance-groups '[{"InstanceCount":1,"InstanceGroupType":"MASTER","InstanceType":"m3.xlarge","Name":"Master - 1"}]' \
 --region us-west-2
 ```
 2. Launch a SageMaker Notebook instance in the same region and VPC.
