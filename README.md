@@ -18,7 +18,7 @@ aws emr create-cluster --auto-scaling-role EMR_AutoScaling_DefaultRole \
 --region us-west-2
 ```
 2. Launch a SageMaker Notebook instance in the same region and VPC.
-3. Open the SageMaker Notebook instance once the status is 'InService'.
+3. Open the SageMaker Notebook instance once the status is 'InService' and click on 'Upload' to upload the notebook below in Step #1.
 
 ## Step 1: Training the Spark Pipeline model. 
 
