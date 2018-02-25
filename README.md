@@ -8,7 +8,7 @@ This uses a small car prices dataset to predict the price of a car given certain
 
 ## Pre-Requisites
 
-* Launch an EMR Spark Cluster selecting Apache Livy to be installed on it.
+1. Launch an EMR Spark Cluster selecting Apache Livy to be installed on it.
 ```
 aws emr create-cluster --auto-scaling-role EMR_AutoScaling_DefaultRole \
 --applications Name=Hadoop Name=Livy Name=Hive Name=Spark --ebs-root-volume-size 10 \
@@ -17,8 +17,8 @@ aws emr create-cluster --auto-scaling-role EMR_AutoScaling_DefaultRole \
 --instance-groups '[{"InstanceCount":1,"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":1}]},"InstanceGroupType":"MASTER","InstanceType":"m4.large","Name":"Master - 1"},{"InstanceCount":2,"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":1}]},"InstanceGroupType":"CORE","InstanceType":"m4.large","Name":"Core - 2"}]' \
 --region us-west-2
 ```
-* Launch a SageMaker Notebook instance in the same region and VPC.
-* Open the SageMaker Notebook instance once the status is 'InService'.
+2. Launch a SageMaker Notebook instance in the same region and VPC.
+3. Open the SageMaker Notebook instance once the status is 'InService'.
 
 ## Step 1: Training the Spark Pipeline model. 
 
