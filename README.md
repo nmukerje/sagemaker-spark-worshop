@@ -8,7 +8,7 @@ This uses a small car prices dataset to predict the price of a car given certain
 
 ## Pre-Requisites
 
-1. Launch an EMR Spark Cluster selecting Apache Livy to be installed on it.
+1. Launch an EMR Spark Cluster selecting Apache Livy to be installed on it. (A single node cluster is enough for this workshop)
 ```
 aws emr create-cluster --auto-scaling-role EMR_AutoScaling_DefaultRole \
 --applications Name=Hadoop Name=Livy Name=Hive Name=Spark --ebs-root-volume-size 10 \
