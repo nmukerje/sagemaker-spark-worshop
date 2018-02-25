@@ -1,6 +1,6 @@
 # Sagemaker-Spark-Workshop
 
-## Deploying a Spark Model to serve a near real-time Inference API hosted on Amazon Sagemaker.
+## Deploying a Spark Model to serve a real-time Inference API hosted on Amazon Sagemaker.
 
 This workshop shows how to train a Spark Model using Amazon Sagemaker pointed to Apache Livy running on an Amazon EMR Spark cluster. The Spark model is then serialized to an MLeap bundle and hosted on Amazon Sagemaker to serve an Inference API. The Inference API accepts JSON data as input and returns predictions on the input dataset within milliseconds.
 
