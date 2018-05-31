@@ -13,12 +13,13 @@ This uses a small car prices dataset to predict the price of a car given certain
 
 1. Launch an EMR Spark Cluster selecting Apache Livy to be installed on it. (A single node cluster is enough for this workshop)
 ```
-aws emr create-cluster --auto-scaling-role EMR_AutoScaling_DefaultRole \
---applications Name=Hadoop Name=Livy Name=Hive Name=Spark --ebs-root-volume-size 10 \
---ec2-attributes '{"KeyName":"<EC2 keypair>","InstanceProfile":"EMR_EC2_DefaultRole","SubnetId":"<subnet id>","EmrManagedSlaveSecurityGroup":"<security group>","EmrManagedMasterSecurityGroup":"<security group>"}' \
---service-role EMR_DefaultRole --release-label emr-5.12.0 --name 'Spark Livy Cluster' \
---instance-groups '[{"InstanceCount":1,"InstanceGroupType":"MASTER","InstanceType":"m3.xlarge","Name":"Master - 1"}]' \
---region us-west-2
+aws emr create-cluster --applications Name=Hadoop Name=Spark Name=Hive Name=Livy \
+--ec2-attributes  '{"KeyName":"<EC2 keypair>","InstanceProfile":"EMR_EC2_DefaultRole","SubnetId":"<VPC Subnet>"}' \
+--release-label emr-5.11.1  --instance-type m3.xlarge --instance-count 1  \
+--configurations '[{"Classification":"spark-defaults","Properties":{"spark.driver.extraClassPath":"/home/hadoop/javalib/*:/usr/lib/hadoop-lzo/lib/*:/usr/lib/hadoop/hadoop-aws.jar:/usr/share/aws/aws-java-sdk/*:/usr/share/aws/emr/emrfs/conf:/usr/share/aws/emr/emrfs/lib/*:/usr/share/aws/emr/emrfs/auxlib/*:/usr/share/aws/emr/security/conf:/usr/share/aws/emr/security/lib/*:/usr/share/aws/hmclient/lib/aws-glue-datacatalog-spark-client.jar:/usr/share/java/Hive-JSON-Serde/hive-openx-serde.jar:/usr/share/aws/sagemaker-spark-sdk/lib/sagemaker-spark-sdk.jar"},"Configurations":[]}]' \
+--auto-scaling-role EMR_AutoScaling_DefaultRole \
+--bootstrap-actions '[{"Path":"<Bootstrap script path in S3>","Name":"Custom action"}]'  \
+--service-role EMR_DefaultRole --name 'Spark Livy cluster' --region us-west-2
 ```
 
 The cluster needs a bootstrap script to have mleap and other dependencies installed:
@@ -27,9 +28,9 @@ The cluster needs a bootstrap script to have mleap and other dependencies instal
 sudo pip install boto3;
 sudo pip install jip;
 sudo pip install mleap;
-jip install ml.combust.mleap:mleap-spark_2.11:0.9.0;
+(cd /home/hadoop && /usr/local/bin/jip install ml.combust.mleap:mleap-spark_2.11:0.9.0)
 ```
-jip installs the java dependencies in /home/hadoop/javalib which needs to be added to the config 'spark.driver.extraClassPath' in the file '/etc/spark/conf/spark-defaults.conf'.
+jip installs the java dependencies in /home/hadoop/javalib which is added to the config 'spark.driver.extraClassPath' in the file '/etc/spark/conf/spark-defaults.conf' by the custom configuration specific in the cluster launch step.
 
 2. Launch a SageMaker Notebook instance in the same region and VPC.
 3. Open the SageMaker Notebook instance once the status is 'InService' and click on 'Upload' to upload the notebook below in Step #1.
