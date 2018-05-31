@@ -20,6 +20,16 @@ aws emr create-cluster --auto-scaling-role EMR_AutoScaling_DefaultRole \
 --instance-groups '[{"InstanceCount":1,"InstanceGroupType":"MASTER","InstanceType":"m3.xlarge","Name":"Master - 1"}]' \
 --region us-west-2
 ```
+
+The cluster needs a bootstrap script to have mleap dependencies installed:
+```
+sudo pip install boto3;
+sudo pip install jip;
+sudo pip install mleap;
+jip install ml.combust.mleap:mleap-spark_2.11:0.9.0;
+```
+jip installs the java dependencies in /home/hadoop/javalib which needs to be added to the config 'spark.executor.extraClassPath' in the file '/etc/spark/conf/spark-defaults.conf'.
+
 2. Launch a SageMaker Notebook instance in the same region and VPC.
 3. Open the SageMaker Notebook instance once the status is 'InService' and click on 'Upload' to upload the notebook below in Step #1.
 
