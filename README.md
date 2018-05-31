@@ -21,7 +21,7 @@ aws emr create-cluster --auto-scaling-role EMR_AutoScaling_DefaultRole \
 --region us-west-2
 ```
 
-The cluster needs a bootstrap script to have mleap dependencies installed:
+The cluster needs a bootstrap script to have mleap and other dependencies installed:
 ```
 sudo pip install boto3;
 sudo pip install jip;
