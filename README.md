@@ -30,7 +30,7 @@ sudo pip install jip;
 sudo pip install mleap;
 (cd /home/hadoop && /usr/local/bin/jip install ml.combust.mleap:mleap-spark_2.11:0.9.0)
 ```
-jip installs the java dependencies in /home/hadoop/javalib which is added to the config 'spark.driver.extraClassPath' in the file '/etc/spark/conf/spark-defaults.conf' by the custom configuration specific in the cluster launch step.
+jip installs the java dependencies in /home/hadoop/javalib which is added to the config 'spark.driver.extraClassPath' in the file '/etc/spark/conf/spark-defaults.conf' by the custom configuration specified in the cluster launch step.
 
 2. Launch a SageMaker Notebook instance in the same region and VPC.
 3. Open the SageMaker Notebook instance once the status is 'InService' and click on 'Upload' to upload the notebook below in Step #1.
