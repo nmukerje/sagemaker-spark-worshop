@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "starting Inference server JAR..."
+java -jar /usr/local/bin/inference-server-assembly-0.1.0-SNAPSHOT.jar
