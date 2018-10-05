@@ -39,7 +39,7 @@ jip installs the java dependencies in /home/hadoop/javalib which is added to the
 
 The Notebook ['Predict-Car-Prices.ipynb'](https://github.com/nmukerje/sagemaker-spark-worshop/blob/master/Predict-Car-Prices.ipynb) trains the Spark model on the dataset and saves the model to an S3 location, converts the Spark pipeline model to an MLeap bundle and saves the MLeap Bundle to S3.
 
-## Step 2: Building the Inteference Server Docker application and pushing the image to ECR.
+## Step 2: Building the Inference Server Docker application and pushing the image to ECR.
 
 The Inference Server Docker application uses a light-weight web micro-framework called ['Scalatra'](http://scalatra.org/) to serve the http application. To build and deploy the Inference Server docker application:
 (please install scala, sbt and docker on your local machine)
