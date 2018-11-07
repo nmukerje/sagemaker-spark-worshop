@@ -26,8 +26,8 @@ fi
 
 
 # Get the region defined in the current configuration (default to us-west-2 if none defined)
-#region=$(aws configure get region)
-region=${region:-us-west-2}
+region=$(aws configure get region)
+#region=${region:-us-west-2}
 echo setting region to $region
 
 fullname="${account}.dkr.ecr.${region}.amazonaws.com/${image}:latest"
@@ -52,3 +52,4 @@ docker build  -t ${image} .
 docker tag ${image} ${fullname}
 
 docker push ${fullname}
+printf "\n*** SAVE THIS *** ECR_Image_Name is : %s" $fullname
